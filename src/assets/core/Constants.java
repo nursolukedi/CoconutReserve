@@ -5,6 +5,10 @@ public class Constants {
     public static final int TRANSPORTION = 1;
     public static final int HOTEL = 2;
 
+    public static final int NUM_OF_CINEMAS = 5;
+    public static final int NUM_OF_HOTELS= 5;
+    public static final int NUM_OF_TRANSPORTIONS= 5;
+
 
     // PRIVATE //
 

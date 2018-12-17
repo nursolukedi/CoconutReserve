@@ -1,11 +1,11 @@
 package assets.core;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public interface Reservation {
     String toString();
     String getReservationInfo();
     String getReserverName();
-    Date getDate();
+    LocalDateTime getReservation_date();
     int getPrice();
 }

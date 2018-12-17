@@ -1,21 +1,18 @@
 package assets.core;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class CinemaReservation implements Reservation {
 
     private Cinema cinema;
-    private Film film;
-    private Date date;
+    private LocalDateTime reserve_date;
     private CinemaSaloon cinemaSaloon;
     private CinemaSeat cinemaSeat;
     private String reserver_name;
 
-    public CinemaReservation(Cinema cinema, Film film, Date date, CinemaSaloon cinemaSaloon, CinemaSeat cinemaSeat,
-                             String reserver_name) {
+    public CinemaReservation(Cinema cinema, CinemaSaloon cinemaSaloon, LocalDateTime reserve_date, String reserver_name) {
         this.cinema = cinema;
-        this.film = film;
-        this.date = date;
+        this.reserve_date = reserve_date;
         this.cinemaSaloon = cinemaSaloon;
         this.cinemaSeat = cinemaSeat;
         this.reserver_name = reserver_name;
@@ -32,12 +29,16 @@ public class CinemaReservation implements Reservation {
     }
 
     @Override
-    public Date getDate() {
-        return date;
+    public LocalDateTime getReservation_date() {
+        return reserve_date;
     }
 
     @Override
     public int getPrice() {
         return cinemaSeat.getPrice();
+    }
+
+    public Films.Film getFilm(){
+        return cinemaSaloon.getFilm();
     }
 }

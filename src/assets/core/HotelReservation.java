@@ -1,24 +1,24 @@
 package assets.core;
 
-import java.util.Date;
+import java.time.LocalDateTime;
 
 public class HotelReservation implements Reservation {
 
     Hotel hotel;
     HotelRoom hotelRoom;
-    Date date;
+    LocalDateTime reservation_date;
     String reserver_name;
 
-    public HotelReservation(Hotel hotel, HotelRoom hotelRoom, Date date, String reserver_name){
+    public HotelReservation(Hotel hotel, HotelRoom hotelRoom, LocalDateTime reservation_date, String reserver_name){
 
-        if (hotel == null || hotelRoom == null || date == null || reserver_name == null)
+        if (hotel == null || hotelRoom == null || reservation_date == null || reserver_name == null)
         {
             throw new NullPointerException("HotelReservation parameters are null!");
         }
 
         this.hotel = hotel;
         this.hotelRoom = hotelRoom;
-        this.date = date;
+        this.reservation_date = reservation_date;
         this.reserver_name = reserver_name;
     }
 
@@ -26,7 +26,7 @@ public class HotelReservation implements Reservation {
     @Override
     public String getReservationInfo() {
         return "Hotel Reservation for person: " + reserver_name +"\n for hotel: " + hotel + "\n for room: "
-                + hotelRoom + "\n for time: " + date + " \n for price: " + getPrice();
+                + hotelRoom + "\n for time: " + reservation_date + " \n for price: " + getPrice();
     }
 
     @Override
@@ -35,8 +35,8 @@ public class HotelReservation implements Reservation {
     }
 
     @Override
-    public Date getDate() {
-        return date;
+    public LocalDateTime getReservation_date() {
+        return reservation_date;
     }
 
     @Override

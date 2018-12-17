@@ -1,17 +1,18 @@
 package assets.core;
 
-public class Hotel{
+public class Hotel implements Place{
 
     //IMPORTANT: If new variable is added, change Init as well
     private String name;
     private String description;
     private int capacity;
-    private int num_of_floor;
+    private HotelRoom[] hotelRooms;
+    private int numOfRooms;
     private double score;
 
-    public Hotel(String name, String description, int num_of_floor, double score)
+    public Hotel(String name, String description, int numOfRooms, double score)
     {
-        if (name == null || description == null || capacity == 0 || num_of_floor == 0 || score == 0)
+        if (name == null || description == null || numOfRooms == 0 || score == 0)
         {
             throw new NullPointerException("Parameters of hotel is empty");
         }
@@ -22,11 +23,23 @@ public class Hotel{
 
         this.name = name;
         this.description = description;
-        this.num_of_floor = num_of_floor;
+        this.numOfRooms = numOfRooms;
         this.score = score;
         capacity = 0;
+
+        hotelRooms = new HotelRoom[numOfRooms];
+        for (int i = 0; i <  numOfRooms; i++)
+        {
+            int room_cap = Utils.randomWithRange(1,5);
+            HotelRoom room = new HotelRoom("R-"+i,room_cap,
+                    room_cap*10,numOfRooms/2,2);
+            hotelRooms[i] = room;
+            this.capacity += room_cap;
+        }
+
     }
 
+    @Override
     public String getName() {
         return name;
     }
@@ -36,23 +49,26 @@ public class Hotel{
         return name;
     }
 
+    @Override
     public String getDescription() {
         return description;
     }
 
+    @Override
     public int getCapacity() {
         return capacity;
     }
 
-    public int getNum_of_floor() {
-        return num_of_floor;
+    public int getNumOfRooms() {
+        return numOfRooms;
     }
 
+    @Override
     public double getScore() {
         return score;
     }
 
-    public void incrementCapacityBy(int cap){
-        capacity += cap;
+    public HotelRoom[] getHotelRooms() {
+        return hotelRooms;
     }
 }
