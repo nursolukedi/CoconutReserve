@@ -6,4 +6,18 @@ public class Init {
     private  Transportion transportions;
 
 
+    public Init(Reservation type) {
+        if (type instanceof Hotel)
+        {
+
+        }
+        else if (type instanceof  Cinema)
+        {
+
+        }
+        else if (type instanceof Transportion)
+        {
+
+        }
+    }
 }
