@@ -1,18 +1,15 @@
 # CoconutReserve
 
 
-Group Coconut 
+# Group 
+Coconut 
+# Project 
+Reservation System
 
-Project Reservation System
-
-*Members*
+# Members
 
 Nursena Kal
-
 Alperen Erkek
-
 Mahin Khankishzade 
-
 Mert Dönmezyürek
-
 Gökalp Köksal
