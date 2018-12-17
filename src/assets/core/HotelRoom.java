@@ -2,7 +2,6 @@ package assets.core;
 
 public class HotelRoom implements SeatAndRoom{
 
-    //IMPORTANT: If new variable is added, change Init as well
     private String roomName;
     private int roomCapacity;
     private boolean isTaken;
