@@ -2,6 +2,8 @@ package assets.core;
 
 public class Hotel implements Reservation {
 
+
+    //IMPORTANT: If new variable is added, change Init as well
     private String name;
     private String description;
     private int capacity;

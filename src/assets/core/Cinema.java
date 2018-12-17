@@ -1,6 +1,8 @@
 package assets.core;
 
 public class Cinema implements Reservation {
+
+    //IMPORTANT: If new variable is added, change Init as well
     private String name;
     private String description;
     private int capacity;
