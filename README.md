@@ -8,6 +8,6 @@
 *Members*
 - Nursena Kal 
 - Alperen Erkek
-- Mahin Khankishzade 
+- Mahin Khankishizade 
 - Mert Dönmezyürek 
 - Gökalp Köksal
