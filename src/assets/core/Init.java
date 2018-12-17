@@ -5,9 +5,7 @@ public class Init {
     private final int NUM_OF_CHOISES = 5; // Can be changed later
 
 
-    private Reservation[] data;
-
-
+    private  data;
 
     public Init(int type) {
         if (type == Constants.HOTEL)
@@ -39,7 +37,7 @@ public class Init {
                 int film_minute = (int)(Math.random() * 59 + 1);
                 double score = (double) (Math.random() * 9 + 1);
 
-                data[i] = new Cinema(name,description,capacity,film,film_hour,film_minute,score);
+                data[i] = new Cinema(name,description,capacity,film,score);
             }
         }
         else if (type == Constants.TRANSPORTION)
