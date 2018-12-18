@@ -10,7 +10,7 @@ public class HotelRoom implements SeatAndRoom{
     private int rowCount;
     private int columnCount;
 
-    public HotelRoom(String roomName, int roomCapacity, int price, int rowCount, int columnCount)
+    public HotelRoom(String roomName, int roomCapacity, int price, int rowCount, int columnCount )
     {
         this.roomName = roomName;
         this.roomCapacity = roomCapacity;
