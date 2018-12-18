@@ -11,4 +11,12 @@ public interface Place {
     public double getScore();
 
     public String toString();
+
+    default SeatAndRoom[][] getSeats(int saloonNum)
+    {
+        if (this instanceof Cinema)
+        {
+
+        }
+    }
 }

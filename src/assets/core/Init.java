@@ -16,6 +16,7 @@ public class Init {
                                         Utils.randomWithRange(10,30),
                                         Utils.randomWithRange(4.0,9.8));
                 data[i] = hotel;
+
             }
         }
         else if(type == Constants.CINEMA)

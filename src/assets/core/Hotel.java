@@ -6,7 +6,7 @@ public class Hotel implements Place{
     private String name;
     private String description;
     private int capacity;
-    private HotelRoom[] hotelRooms;
+    private HotelRoom[][] hotelRooms;
     private int numOfRooms;
     private double score;
 
@@ -27,15 +27,19 @@ public class Hotel implements Place{
         this.score = score;
         capacity = 0;
 
-        hotelRooms = new HotelRoom[numOfRooms];
-        for (int i = 0; i <  numOfRooms; i++)
+        hotelRooms = new HotelRoom[2][numOfRooms/2];
+        for (int i = 0; i < 2; i++)
         {
-            int room_cap = Utils.randomWithRange(1,5);
-            HotelRoom room = new HotelRoom("R-"+i,room_cap,
-                    room_cap*10,numOfRooms/2,2);
-            hotelRooms[i] = room;
-            this.capacity += room_cap;
+            for (int j = 0; j <  numOfRooms/2; j++)
+            {
+                int room_cap = Utils.randomWithRange(1,5);
+                HotelRoom room = new HotelRoom((char)(65 +i) + "-" + j, room_cap,
+                        room_cap*10,numOfRooms/2,2);
+                hotelRooms[i][j] = room;
+                this.capacity += room_cap;
+            }
         }
+
 
     }
 
@@ -68,7 +72,7 @@ public class Hotel implements Place{
         return score;
     }
 
-    public HotelRoom[] getHotelRooms() {
+    public HotelRoom[][] getHotelRooms() {
         return hotelRooms;
     }
 }
